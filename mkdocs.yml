@@ -1,5 +1,7 @@
 site_name: GenGen wiki
-site_author: 你的名字
+site_author: GGenerals
+site_url: https://gengen.qzz.io/wiki/ 
+
 
 theme:
   name: material
