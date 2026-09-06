@@ -1,28 +1,8 @@
-/* docs/stylesheets/extra.css */
-
-/* 针对顶栏（Header）应用毛玻璃效果 */
-[data-md-color-scheme="default"] .md-header,
-[data-md-color-scheme="slate"] .md-header {
-  background: rgba(255, 255, 255, 0.25) !important; /* 半透明白色背景 */
-  backdrop-filter: blur(12px) !important;           /* 背景模糊，产生毛玻璃效果 */
-  -webkit-backdrop-filter: blur(12px) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+.md-typeset details .highlight pre,
+.md-typeset details .codehilite pre {
+    font-size: 0.8rem !important;
 }
 
-/* 针对左侧导航栏应用毛玻璃效果 */
-[data-md-color-scheme="default"] .md-sidebar__inner,
-[data-md-color-scheme="slate"] .md-sidebar__inner {
-  background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  border-radius: 8px;
-  padding: 8px;
-}
-
-/* 毛玻璃效果示例 */
-[data-bg-style="glass"] .md-header {
-  background: rgba(255, 255, 255, 0.25) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+.md-typeset details {
+    border: 3px solid red !important;
 }

@@ -37,7 +37,7 @@ int qmul(int a,int b,int p)
 同时我们也有快速乘，时间复杂度 $O(1)$：
 
 ??? note "快速乘"
-
+    滚木
     ```cpp
     unsigned long long quick_mul(long long a, long long b, long long mod) 
     {
