@@ -38,6 +38,7 @@ int qmul(int a,int b,int p)
 
 ??? note "快速乘"
     滚木
+    
     ```cpp
     unsigned long long quick_mul(long long a, long long b, long long mod) 
     {
