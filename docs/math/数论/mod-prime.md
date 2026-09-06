@@ -36,11 +36,13 @@ int qmul(int a,int b,int p)
 
 同时我们也有快速乘，时间复杂度 $O(1)$：
 
-```cpp
-unsigned long long quick_mul(long long a, long long b, long long mod) 
-{
-  unsigned long long c =(unsigned long long)a * b -(unsigned long long)((long double)a / mod * b + 0.5L) * mod;
-  if (c < mod) return c;
-  return c + mod;
-}
-```
+??? note "快速乘"
+
+    ```cpp
+    unsigned long long quick_mul(long long a, long long b, long long mod) 
+    {
+        unsigned long long c =(unsigned long long)a * b -(unsigned long long)((long double)a / mod * b + 0.5L) * mod;
+        if (c < mod) return c;
+        return c + mod;
+    }
+    ```
