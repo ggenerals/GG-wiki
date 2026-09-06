@@ -32,6 +32,7 @@ extra_javascript:
 markdown_extensions:
   - pymdownx.highlight:
       use_pygments: true
+      linenums: true
       line_spans: __span
   - pymdownx.superfences
   - pymdownx.arithmatex:
