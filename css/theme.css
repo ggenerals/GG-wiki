@@ -2,7 +2,3 @@
 .md-typeset details .codehilite pre {
     font-size: 0.8rem !important;
 }
-
-.md-typeset details {
-    border: 3px solid red !important;
-}
