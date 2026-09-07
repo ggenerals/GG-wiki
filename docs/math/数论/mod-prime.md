@@ -91,3 +91,25 @@ $$g=\gcd(a_1,a_2,\cdots,a_n)$$
 
 $$g=\operatorname{lcm}(a_1,a_2,\cdots,a_n)$$
 ## 质数
+如果 $p$ 除了 $1,p$ 外不存在 $g|p$，则称 $p$ 为质数，否则为合数。
+### 算数基本定理
+也就是质因数分解：对于任意正整数 $n$，一定存在 $p_i\in prime$，满足：
+
+$$n=p_1p_2\cdots p_s$$
+
+不计次序，该表示方法唯一。通常我们写作：
+
+$$n=\prod_{i=1}^n p_i^{e_i}$$
+## 同余
+如果 $a,b,p$ 满足：
+
+$$a\bmod p=b\bmod p$$
+
+则称 $a,b$ 在模 $p$ 意义下同余，记作：
+
+$$a\equiv b\pmod p$$
+### 同余的性质
+- $a\equiv a\pmod p$；
+- $a\equiv b\pmod p\Rightarrow b\equiv a\pmod p$；
+- $a\equiv b\pmod p,b\equiv c\pmod p\Rightarrow a\equiv c\pmod p$
+- $a\equiv b\pmod p,c\equiv d\pmod p\Rightarrow (a\pm c)\equiv (b\pm d)\pmod p,ac\equiv bd\pmod p$
