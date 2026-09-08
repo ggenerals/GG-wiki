@@ -54,6 +54,7 @@ nav:
     - 数论: 
       - 数论基础: math/数论/mod-prime.md
       - 中国剩余定理: math/数论/crt.md
+      - 最大公因数: math/数论/gcd.md
     - 生成函数:
       - 普通型生成函数: math/生成函数/ogf.md
       - 指数型生成函数: math/生成函数/egf.md
