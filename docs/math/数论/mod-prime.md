@@ -112,4 +112,4 @@ $$a\equiv b\pmod p$$
 - $a\equiv a\pmod p$；
 - $a\equiv b\pmod p\Rightarrow b\equiv a\pmod p$；
 - $a\equiv b\pmod p,b\equiv c\pmod p\Rightarrow a\equiv c\pmod p$
-- $a\equiv b\pmod p,c\equiv d\pmod p\Rightarrow (a\pm c)\equiv (b\pm d)\pmod p,ac\equiv bd\pmod p$
+- $a\equiv b\pmod p,c\equiv d\pmod p\Rightarrow (a\pm c)\equiv (b\pm d)\pmod p,ac\equiv bd\pmod p$。
