@@ -1,3 +1,9 @@
+---
+authors:
+   - name: Gcend
+     github: Gcend-gen
+---
+
 # 最大公因数
 ## GCD 算法
 ## exGCD 算法
