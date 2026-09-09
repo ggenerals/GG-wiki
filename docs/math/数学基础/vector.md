@@ -14,6 +14,7 @@
 
 - 向量点乘：$\vec a\cdot\vec b=|\vec a||\vec b|\cos\theta$。  
   其物理意义为 $\vec a$ 在 $\vec b$ 方向做的功。
+
 $$(x_1,y_1)\cdot(x_2,y_2)=x_1x_2+y_1y_2$$
 - 向量叉乘：$\vec a\times\vec b=|\vec a||\vec b|\sin\theta$。  
   其几何意义为 $\vec a$ 与 $\vec b$ 所夹的面积。
