@@ -1,35 +1,50 @@
 import subprocess
 from pathlib import Path
 
+
 def define_env(env):
     @env.macro
     def page_creator(page_file_path):
         """
-        传入当前页面的相对路径（如 'docs/index.md'），
-        返回该文件在 Git 仓库中的首次提交作者（创建者）。
+        传入 page.file.src_uri（相对于 docs 目录的路径），
+        返回该文件在 Git 仓库中的首次提交作者。
         """
-        repo_root = Path(env.project_dir)
-        # 构建文件的绝对路径
-        file_path = repo_root / page_file_path
+        repo_root = Path(env.project_dir).resolve()
 
-        if not file_path.exists():
-            return "Unknown Creator"
+        # docs_dir 可能配置为 "docs"，也可能是别的名字
+        docs_dir = env.conf.get("docs_dir", "docs")
+        docs_dir_path = (repo_root / docs_dir).resolve()
+
+        # 拼接出文件的真实绝对路径
+        file_abs = (docs_dir_path / page_file_path).resolve()
+
+        if not file_abs.exists():
+            return f"Unknown Creator (path: {file_abs})"
+
+        # git 需要相对仓库根目录的路径
+        try:
+            rel_path = file_abs.relative_to(repo_root)
+        except ValueError:
+            return "Unknown Creator (outside repo)"
 
         try:
-            # git log --follow --diff-filter=A 获取首次创建该文件的提交
-            # --format=%an 只取作者名字，%ae 可加邮箱，此处只取名字
             cmd = [
-                'git', 'log', '--follow', '--diff-filter=A',
-                '--format=%an', '--', str(file_path)
+                "git", "log", "--follow", "--diff-filter=A",
+                "--format=%an", "--", str(rel_path)
             ]
-            result = subprocess.run(cmd, cwd=repo_root, capture_output=True, text=True)
-            lines = result.stdout.strip().split('\n')
-            
-            # git log 默认最新的提交在前（倒序），因此最后一行是初始提交
-            if lines and lines[0]:
-                # 注意：若文件从未提交过，lines 为空
-                return lines[-1]  # 取最后一行，即创建者
+            result = subprocess.run(
+                cmd, cwd=str(repo_root),
+                capture_output=True, text=True
+            )
+
+            if result.returncode != 0:
+                return f"Git error: {result.stderr.strip()}"
+
+            # git log 默认最新在前，最后一行才是最初的创建提交
+            lines = [l for l in result.stdout.strip().split("\n") if l]
+            if lines:
+                return lines[-1]
             else:
                 return "Uncommitted File"
         except Exception as e:
-            return f"Error: {str(e)}"
+            return f"Error: {e}"
