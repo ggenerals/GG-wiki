@@ -31,7 +31,8 @@ extra_javascript:
 
 plugins:
   - search
-  - git-authors
+  - macros
+  # - git-authors
 
 markdown_extensions:
   - pymdownx.highlight:
