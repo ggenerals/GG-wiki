@@ -49,6 +49,8 @@ nav:
   - 数据结构: 
     - 线段树: 
       - 线段树基础: data_structure/线段树/Segment_basic.md
+    - 分块:
+      - 倍增值域分块: data_structure/分块/倍增值域分块.md
   - 数学:
     - 数学基础: 
       - 集合与逻辑: math/数学基础/set_logic.md
