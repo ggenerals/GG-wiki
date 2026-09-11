@@ -81,13 +81,13 @@ nav:
       - 线段树:
           - 线段树基础: data_structure/线段树/Segment_basic.md
       - 平衡树:
-          - 平衡树基础: data_structure/平衡树/Balanced tree_basic.md
+          - 平衡树基础: data_structure/平衡树/Balanced_tree_basic.md
           - Splay: data_structure/平衡树/Splay.md
           - FHQ-Treap: data_structure/平衡树/FHQ-Treap.md
       - 分块:
           - 倍增值域分块: data_structure/分块/倍增值域分块.md
       - 可持久化:
-          - 可持久化基础: data_structure/可持久化/Persistent Data Structures.md
+          - 可持久化基础: data_structure/可持久化/Persistent_Data_Structures.md
 
   - 数学:
       - 数学基础:
