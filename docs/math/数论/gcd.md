@@ -136,7 +136,7 @@ int gcd(int x,int y){ // 传入的 x > y
 
 我们可以通过裴蜀定理判断二元一次不定方程是否存在整数解。
 
----
+### 求解过程
 
 若方程存在整数解，我们可以在与欧几里德算法相同复杂度的情况下求出该方程的一组整数解。
 
@@ -171,6 +171,10 @@ int gcd(int x,int y){ // 传入的 x > y
     $$x_1 = y_2,y_1 = x_2 - \lfloor \frac{a}{b} \rfloor y_2$$
 
     递归求解即可，直到 $b = 0$ 时，$x = 1,y = 0$。
+
+---
+
+代码示例如下，
 
 ```cpp linenums="1"
 int exgcd(int a,int b,int &x,int &y){
