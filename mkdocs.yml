@@ -22,6 +22,9 @@ theme:
     - navigation.tabs
   language: zh      # 关键：设置为中文
 
+  features:
+    - content.tabs.link #选项卡
+
 extra_css:
   - css/theme.css
 
@@ -47,7 +50,17 @@ markdown_extensions:
   - admonition #便利贴
   - pymdownx.details #块折叠
   - pymdownx.superfences #块嵌套
-
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true #选项卡
+  
+  #代码块
+  - pymdownx.highlight:  # 代码高亮
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.keys # 样式：键盘按键
 
 nav:
   - 首页: index.md
