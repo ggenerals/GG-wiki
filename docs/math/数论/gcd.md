@@ -90,7 +90,7 @@ $$\gcd(0,a)=a$$
 
 ---
 
-**性质 3：** 当 $a>b$ 时，$\gcd(a,b)=\gcd(a \mod b,b)$。
+**性质 3：** 当 $a>b$ 时，$\gcd(a,b)=\gcd(a \bmod b,b)$。
 
 ??? note "证明"
 
@@ -106,7 +106,7 @@ $$\gcd(0,a)=a$$
 
     1. $b \ge \frac{a}{2}$，那么 $a-b \le \frac{a}{2}$。
     
-    2. $b < \frac{a}{2}$，那么 $a \mod b < b < \frac{a}{2}$。
+    2. $b < \frac{a}{2}$，那么 $a \bmod b < b < \frac{a}{2}$。 
 
     那么每次 $a$ 或 $b$ 会减少至少一半，所以总共只会进行 $O(\log \max(a,b))$ 次。
 
