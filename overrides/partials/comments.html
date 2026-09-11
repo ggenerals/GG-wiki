@@ -1,0 +1,41 @@
+<script>
+  const getTheme = () => {
+    const palette = JSON.parse(localStorage.getItem('__palette'));
+    return palette && palette.color && palette.color.scheme === 'slate' ? 'dark' : 'light';
+  };
+
+  const setTheme = (theme) => {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: theme } } }, 'https://giscus.app');
+  };
+
+  const initGiscus = () => {
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'ggenerals/GG-wiki'); // 你的仓库
+    script.setAttribute('data-repo-id', 'R_kgDOUQLhBg'); // 你的仓库ID
+    script.setAttribute('data-category', 'General');
+    script.setAttribute('data-category-id', 'DIC_kwDOUQLhBs4DFXQL');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', getTheme());
+    script.setAttribute('data-lang', 'zh-CN');
+    script.setAttribute('data-loading', 'lazy');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+
+    // 监听 Giscus 的加载事件
+    script.onload = () => setTheme(getTheme());
+    document.body.appendChild(script);
+  };
+
+  // 监听主题切换事件
+  document.addEventListener('DOMContentLoaded', initGiscus);
+  document.querySelector('[data-md-component="palette"]')?.addEventListener('change', () => {
+    setTheme(getTheme());
+  });
+</script>

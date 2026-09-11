@@ -4,6 +4,8 @@ site_url: https://gengen.qzz.io/wiki/
 
 theme:
   name: material
+  custom_dir: overrides 
+
   features:
     # --- 代码块增强 ---
     - content.code.copy          # 为代码块启用复制按钮[reference:2]
