@@ -4,4 +4,4 @@
 
 欢迎打赏
 
-[图片：付款吗]
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/7uzglkak.png" alt="赞赏吗" width="500" height="300">
