@@ -62,11 +62,6 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.keys # 样式：键盘按键
 
-  # 折叠框
-  - admonition #便利贴
-  - pymdownx.details #块折叠
-  - pymdownx.superfences #块嵌套
-
 
 nav:
   - 首页: index.md
