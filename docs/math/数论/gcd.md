@@ -25,7 +25,8 @@ authors:
 
 **定理1：** $ab=\gcd(a,b) \text{lcm}(a,b)$。
 
-:::info[证明]
+**证明1：**
+
 设 $a,b$ 的所有质因子组成集合 $P$，对于 $p \in P$，设
 
 $$v_p{a}=\alpha,v_p(b)=\beta$$
@@ -55,4 +56,6 @@ $$v_p(\gcd(a,b)\text{lcm}(a,b))=\alpha + \beta=v_p(ab)$$
 由唯一分解定理，两个正整数的质因数分解完全相同就说明它们相等，因此
 
 $$ab=\gcd(a,b)\text{lcm}(a,b)$$
+
+
 :::
