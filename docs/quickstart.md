@@ -17,4 +17,14 @@
 
 在更改下有一个提交按钮，再往下是你本次积累的修改。上面是你对本次修改的描述，输入描述（一般建议输入 `update`）。
 
-提交之后点击 同步 按钮，
+提交之后点击 同步更改 按钮，如果出现提示，按照提示进行操作即可。
+
+## Part3 更多
+### 启动本地预览
+请确保你的 python 版本不低于 3.8，推荐 3.11 或 3.12，这部分操作请自行上网搜索。
+
+创建并激活虚拟环境（建议在 VScode 的终端中执行接下来的操作）：
+1. 运行 `sudo apt install python3.12-venv` 安装虚拟环境。
+2. 运行 `python3 -m venv .venv && source .venv/bin/activate` 激活虚拟环境。
+3. 使用 `pip install -r requirements.txt` 安装依赖。
+4. 使用 `mkdocs serve` 启动实时预览。
