@@ -115,15 +115,17 @@ $$\gcd(0,a)=a$$
 
 事实上，我们有一个函数 `__gcd(a,b)` 可以得到 $\gcd(a,b)$，但还是推荐自己写代码。
 
-```c++ title="gcd.cpp"
-int gcd(int x,int y){ // 传入的 x > y
-    if(y==0) return x;
-    return gcd(y,x%y);
-}
-```
+??? note “代码示例”    
+
+    ```cpp
+    int gcd(int x,int y){ // 传入的 x > y
+        if(y==0) return x;
+        return gcd(y,x%y);
+    }
+    ```
 
 ## 扩展欧几里德定理
 
-扩展欧几里德定理解决的是二元一次不定方程的整数解问题。
 
-Over.
+
+over.
