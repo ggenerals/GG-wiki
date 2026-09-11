@@ -57,6 +57,6 @@ authors:
 
     由唯一分解定理，两个正整数的质因数分解完全相同就说明它们相等，因此
     
-    $$ab=\gcd(a,b)\operatorname{lcm}(a,b)(a,b)$$
+    $$ab=\gcd(a,b)\operatorname{lcm}(a,b)$$
 
 over.
