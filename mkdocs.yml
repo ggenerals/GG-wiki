@@ -80,7 +80,7 @@ nav:
   - 数据结构:
       - 线段树:
           - 线段树基础: data_structure/线段树/Segment_basic.md
-      - 平衡树：
+      - 平衡树:
           - 平衡树基础: data_structure/平衡树/Balanced tree_basic.md
           - Splay: data_structure/平衡树/Splay.md
           - FHQ-Treap: data_structure/平衡树/FHQ-Treap.md
