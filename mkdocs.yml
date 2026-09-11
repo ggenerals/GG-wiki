@@ -87,7 +87,7 @@ nav:
       - 分块:
           - 倍增值域分块: data_structure/分块/倍增值域分块.md
       - 可持久化:
-          - 可持久化基础: data_structure/可持久化/Persistent_Data_Structures‌.md
+          - 可持久化基础: data_structure/可持久化/Persistent_Data_Structure.md
 
   - 数学:
       - 数学基础:
