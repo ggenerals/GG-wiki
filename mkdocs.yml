@@ -44,6 +44,11 @@ markdown_extensions:
       generic: true
   - pymdownx.details
 
+  - admonition #便利贴
+  - pymdownx.details #块折叠
+  - pymdownx.superfences #块嵌套
+
+
 nav:
   - 首页: index.md
   - 数据结构: 
