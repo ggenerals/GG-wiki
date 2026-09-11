@@ -6,30 +6,26 @@ def define_env(env):
     @env.macro
     def page_creator(page_file_path):
         """
-        传入 page.file.src_uri（相对于 docs 目录的路径），
-        返回该文件在 Git 仓库中的首次提交作者。
+        返回该文件最早一次提交的作者（= 创建者）。
+        传入的是 page.file.src_uri（相对 docs 目录的路径）。
         """
         repo_root = Path(env.project_dir).resolve()
-
-        # docs_dir 可能配置为 "docs"，也可能是别的名字
         docs_dir = env.conf.get("docs_dir", "docs")
-        docs_dir_path = (repo_root / docs_dir).resolve()
-
-        # 拼接出文件的真实绝对路径
-        file_abs = (docs_dir_path / page_file_path).resolve()
+        file_abs = (repo_root / docs_dir / page_file_path).resolve()
 
         if not file_abs.exists():
-            return f"Unknown Creator (path: {file_abs})"
+            return "Unknown Creator"
 
-        # git 需要相对仓库根目录的路径
         try:
             rel_path = file_abs.relative_to(repo_root)
         except ValueError:
-            return "Unknown Creator (outside repo)"
+            return "Unknown Creator"
 
         try:
+            # --reverse：最旧的提交排在最前
+            # 不用 --follow / --diff-filter，避免两者互相干扰
             cmd = [
-                "git", "log", "--follow", "--diff-filter=A",
+                "git", "log", "--reverse",
                 "--format=%an", "--", str(rel_path)
             ]
             result = subprocess.run(
@@ -38,13 +34,11 @@ def define_env(env):
             )
 
             if result.returncode != 0:
-                return f"Git error: {result.stderr.strip()}"
+                return "Unknown Creator"
 
-            # git log 默认最新在前，最后一行才是最初的创建提交
             lines = [l for l in result.stdout.strip().split("\n") if l]
             if lines:
-                return lines[-1]
-            else:
-                return "Uncommitted File"
-        except Exception as e:
-            return f"Error: {e}"
+                return lines[0]   # 第一条 = 最旧 = 创建者
+            return "Uncommitted File"
+        except Exception:
+            return "Unknown Creator"
