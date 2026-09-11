@@ -1,7 +1,6 @@
 site_name: GenGen wiki
 site_author: GGenerals
-site_url: https://gengen.qzz.io/wiki/ 
-
+site_url: https://gengen.qzz.io/wiki/
 
 theme:
   name: material
@@ -16,22 +15,23 @@ theme:
   palette:
     # 亮色模式
     - scheme: default
-      primary: white        # 亮色模式下保持蓝色
+      primary: white
       toggle:
         icon: material/brightness-7
         name: 切换至深色模式
+
     # 暗色模式
     - scheme: slate
-      primary: black          # 👈 暗色模式顶栏改为深灰色
+      primary: black
       toggle:
         icon: material/brightness-4
         name: 切换至亮色模式
-  features:
-    - navigation.tabs
-  language: zh      # 关键：设置为中文
 
   features:
-    - content.tabs.link #选项卡
+    - navigation.tabs
+    - content.tabs.link
+
+  language: zh
 
 extra_css:
   - css/theme.css
@@ -43,17 +43,16 @@ extra_javascript:
 plugins:
   - search
   - macros
-  # - git-authors
 
 markdown_extensions:
-  - pymdownx.highlight:
-      use_pygments: true
-      linenums: true
-      line_spans: __span
+  - admonition
+
+  - pymdownx.details
+
   - pymdownx.superfences
+
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.details
 
   # --- 基础扩展（折叠框依赖）---
   - admonition                   # 启用提示框（Admonition）语法[reference:4]
@@ -79,23 +78,28 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
-  - 数据结构: 
-    - 线段树: 
-      - 线段树基础: data_structure/线段树/Segment_basic.md
-    - 分块:
-      - 倍增值域分块: data_structure/分块/倍增值域分块.md
+
+  - 数据结构:
+      - 线段树:
+          - 线段树基础: data_structure/线段树/Segment_basic.md
+      - 分块:
+          - 倍增值域分块: data_structure/分块/倍增值域分块.md
+
   - 数学:
-    - 数学基础: 
-      - 集合与逻辑: math/数学基础/set_logic.md
-      - 函数入门: math/数学基础/function.md
-      - 复数: math/数学基础/complex.md
-      - 向量入门: math/数学基础/vector.md
-    - 数论: 
-      - 数论基础: math/数论/mod-prime.md
-      - 中国剩余定理: math/数论/crt.md
-      - 最大公因数: math/数论/gcd.md
-    - 生成函数:
-      - 普通型生成函数: math/生成函数/ogf.md
-      - 指数型生成函数: math/生成函数/egf.md
-  - 字符串: 
-    - 字典树: string/Trie.md
+      - 数学基础:
+          - 集合与逻辑: math/数学基础/set_logic.md
+          - 函数入门: math/数学基础/function.md
+          - 复数: math/数学基础/complex.md
+          - 向量入门: math/数学基础/vector.md
+
+      - 数论:
+          - 数论基础: math/数论/mod-prime.md
+          - 中国剩余定理: math/数论/crt.md
+          - 最大公因数: math/数论/gcd.md
+
+      - 生成函数:
+          - 普通型生成函数: math/生成函数/ogf.md
+          - 指数型生成函数: math/生成函数/egf.md
+
+  - 字符串:
+      - 字典树: string/Trie.md
