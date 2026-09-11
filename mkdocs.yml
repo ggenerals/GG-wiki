@@ -11,6 +11,7 @@ theme:
 
     # --- 内容选项卡增强 ---
     - content.tabs.link          # 允许内容选项卡的链接联动[reference:3]
+    - content.tooltips          # 启用改进的提示气泡
 
   palette:
     # 亮色模式
@@ -54,26 +55,19 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
-  # --- 基础扩展（折叠框依赖）---
-  - admonition                   # 启用提示框（Admonition）语法[reference:4]
-  - pymdownx.details             # 启用可折叠块（Details）语法[reference:5]
-
-  # --- 高级代码块（推荐）---
-  - pymdownx.highlight:
-      anchor_linenums: true      # 为行号添加锚点，方便链接[reference:6]
-  - pymdownx.superfences         # 支持在代码块中嵌套其他内容，是内容选项卡的基础[reference:7]
-
-  # --- 内容选项卡（推荐）---
+  - admonition                  # 提示框基础
+  - pymdownx.details            # 可折叠提示框
   - pymdownx.tabbed:
-      alternate_style: true      # 使用更现代的选项卡样式[reference:8]
-
-  # --- 其他实用扩展（可选）---
-  - attr_list                    # 允许为元素添加HTML属性和CSS类[reference:9]
-  - md_in_html                   # 允许在HTML块中使用Markdown语法[reference:10]
-  - tables                       # 启用表格语法[reference:11]
+      alternate_style: true     # 内容标签页 (必需)
+  - pymdownx.superfences        # 标签页嵌套内容、代码注解的基础
+  - attr_list                   # 按钮、注解所需的属性列表
+  - md_in_html                  # 注解在HTML中的支持
+  - tables                      # 数据表格
+  # 以下为可选但建议启用的项
+  - pymdownx.highlight:
+      anchor_linenums: true     # 代码块行号锚点
   - toc:
-      permalink: true            # 为标题添加永久链接图标[reference:12]
-      toc_depth: 3               # 设置目录深度为3级[reference:13]
+      permalink: true           # 标题永久链接
   
 
 nav:
