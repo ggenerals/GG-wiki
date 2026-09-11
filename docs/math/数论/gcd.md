@@ -7,7 +7,4 @@ authors:
 本文作者： {{ page_creator(page.file.src_uri) }}
 
 # 最大公因数
-## GCD 算法
-## exGCD 算法
-滚木
-## Gcend 的打赏环节
+为什么要专门开一个子目讲这个啊？！
