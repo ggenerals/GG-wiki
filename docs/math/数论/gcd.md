@@ -25,9 +25,9 @@ authors:
 
 ---
 
-**定理1：** $ab=\gcd(a,b) \text{lcm}(a,b)$。
+**定理：** $ab=\gcd(a,b) \text{lcm}(a,b)$。
 
-!!! note 证明1：
+!!! note 证明：
 
   设 $a,b$ 的所有质因子组成集合 $P$，对于 $p \in P$，设
 
