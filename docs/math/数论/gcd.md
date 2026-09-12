@@ -188,6 +188,8 @@ int exgcd(int a,int b,int &x,int &y){
 }
 ```
 
+补充结论：若 $b \ne 0$，则有 $|x| \le b,|y| \le a$，这保证了 $\text{exgcd}$ 的取值不会超出限制。
+
 函数的返回值为 $\gcd(a,b)$，$x,y$ 在递归中被求解。
 
 ---

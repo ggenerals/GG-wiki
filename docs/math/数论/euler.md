@@ -1,10 +1,15 @@
+# 欧拉函数
+
 ## 欧拉函数
-## 欧拉函数
+
 ### 欧拉函数的定义
+
 > （定义）欧拉函数：$\varphi(n)$ 表示 $n$ 以内的正整数与 $n$ 的互质的数的个数。
 >
 > $$\varphi(n)=|\{k|1\le k\le n,k\perp n\}|$$
+
 ### 欧拉函数的性质
+
 > 性质 1：
 >
 > $$\forall p\in \text{prime},\varphi(p)=p-1$$
@@ -34,8 +39,11 @@
 > > 同理 $d_i+tx(0\le t<a)$ 小于 $ax$ 且 $(d_i+tx)\perp ax$。  
 > > 总计有大于等于 $a\varphi(x)$ 组互质。
 > > 设与 $x$ 不互质的一个数为 $k$，记 $d=\gcd(n,k),p=\frac{k}{d},q=\frac{n}{d}$，那么 $d+tx=d(p+q)$ 必然和 $ax$ 有公因数 $d$，故上一段构造的集合充分，所以 $\forall a|x,\varphi(ax)=a\varphi(x)$。
+
 ## 欧拉函数的求法
+
 ### 求单个欧拉函数的值
+
 > 性质 5：设 $n=\prod p_i^{e_i}$，则：
 > 
 > $$\varphi(n)=n\prod\frac{p_i-1}{p_i}$$
@@ -70,21 +78,30 @@ int phi(int n)
 > 那么 $n$ 只含有质因子 $2$，记 $n=2^k$，则 $\varphi(n)=2^{k-1}$，显然此时只有 $k=1$ 有贡献，即 $n=2$。
 > 
 > 还有一种情况，$n$ 不含质因子，故 $n=1$。所以性质成立。
+
 ## 欧拉定理
+
 ### 欧拉定理
 > 欧拉定理：若 $a\perp n$，则：
 > 
 > $$a^{\varphi(n)}\equiv 1\pmod n$$
+
 ### 费马小定理
+
 $n$ 为质数时，$\varphi(n)=n-1$，则：
 
 $$a^{n-1}\equiv 1\pmod n$$
+
 ## 欧拉定理的应用
+
 ### 求乘法逆元
+
 > 性质 7：若 $a\perp n$，则：
 > 
 > $$a^{-1}\equiv a^{\varphi(n)-1}\pmod n$$
+
 ### 指数降幂
+
 > 推论 1：若 $a\perp n$，则：
 > 
 > $$a^b\equiv a^{b\bmod \varphi(n)}\bmod n$$
