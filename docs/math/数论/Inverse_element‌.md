@@ -79,3 +79,8 @@ int inv(int x,int mod){
 
 ## 多个逆元的求解方式
 
+---
+
+Over.
+
+感谢 Gcend 编写此页面。
